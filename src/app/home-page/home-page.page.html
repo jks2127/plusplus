@@ -1,0 +1,20 @@
+<ion-header mode='ios'>
+  <ion-toolbar>
+    <ion-title>PlusPlus</ion-title>
+    <button ion-button (click)="goToChatPage()">Chat</button>
+    <button ion-button (click)="logOut()">Log Out</button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode='' color="medium">
+  <ion-card *ngFor="let user of users">
+    <ion-card-header color="warning">
+      <ion-card-title>{{user.name}}</ion-card-title>
+    </ion-card-header>
+    <!-- <ion-card-subtitle>Location</ion-card-subtitle> -->
+    <ion-card-content (click)="contentClick()">
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash
+    </ion-card-content>
+  </ion-card>
+</ion-content>
