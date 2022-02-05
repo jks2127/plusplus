@@ -1,0 +1,35 @@
+<ion-header mode='ios'>
+  <ion-toolbar>
+    <ion-title>PlusPlus</ion-title>
+    <button ion-button (click)="goToChatPage()">Chat</button>
+    <button ion-button (click)="logOut()">Log Out</button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #content [scrollEvents]="true">
+  <div class="chatMessage">
+    sdsdfsdk
+    <div *ngFor="let m of msg; let i = index" class="message-line-outer-span" >
+      <span class="message-line">
+        {{msg[i]}}<br>
+      </span>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer style="margin-bottom: 10px; margin-top: 10px;">
+  <form [formGroup]='msgForm'>
+    <table>
+      <tr>
+        <td>
+          <ion-input class="inputChat" formControlName="msgInput"></ion-input>
+        </td>
+        <td>
+          <ion-fab-button (click)="onSend()">
+            <ion-icon name="send"></ion-icon>
+          </ion-fab-button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</ion-footer>

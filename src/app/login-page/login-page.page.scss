@@ -1,0 +1,31 @@
+.ioncontent {
+  width: 100%;
+  text-align: center;
+}
+
+.ionitem {
+  width: 80%;
+  margin: auto;
+}
+form {
+  margin: auto;
+  height: 100%;
+  border: 3px solid black;
+  padding-top: 40%;
+  text-align: center;
+}
+ion-input {
+  color: rgb(0, 0, 0);
+  font-size: larger;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  background-color: rgb(255, 255, 255);
+  width: 70%;
+  margin: auto;
+  border-bottom: 4px solid rgb(253, 207, 0);
+  border-radius: 15px;
+}
+ion-button {
+  margin-top: 9px;
+  width: 30% ;
+}
