@@ -15,6 +15,7 @@ export class HomePagePage implements OnInit {
     {name: 'Jugal'},
     {name: 'kishor singh'},
   ];
+  dotButtonToggle: boolean = false;
   constructor(private router: Router, private menuCtrl: MenuController) {
     console.log(this.users[0]);;
   }
@@ -30,5 +31,27 @@ export class HomePagePage implements OnInit {
     this.menuCtrl.enable(false);
     this.router.navigate(['/']);
   }
+  dotButton() {
+    this.dotButtonToggle = !this.dotButtonToggle;
+    console.log("dot button clicked", this.dotButtonToggle);
+  }
+  dotButtonOptions (page: string){
+    console.log("options clicked", page);
+    switch (page) {
+      case 'chat': 
+        this.dotButtonToggle = false;
+        this.router.navigate(['/chat-page']);
+      break;
+      
+      case 'home':
+        this.dotButtonToggle = false;
+        this.router.navigate(['/home-page']);
+      break;
 
+      default:
+        this.dotButtonToggle = false;
+      break;
+    }
+    
+  }
 }

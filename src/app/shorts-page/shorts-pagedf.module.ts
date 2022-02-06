@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePagedfPageRoutingModule } from './home-pagedf-routing.module';
+import { ShortsPagedfPageRoutingModule } from './shorts-page-routing.module';
 
-import { HomePagedfPage } from './home-pagedf.page';
+import { ShortsPagedfPage } from './shorts-pagedf.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePagedfPageRoutingModule
+    ShortsPagedfPageRoutingModule
   ],
-  declarations: [HomePagedfPage]
+  declarations: [ShortsPagedfPage]
 })
-export class HomePagedfPageModule {}
+export class ShortsPagedfPageModule {}

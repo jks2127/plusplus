@@ -7,6 +7,14 @@
 </ion-header>
 
 <ion-content mode='' color="medium">
+  <button style="height: 40px; width:40px; position: fixed; top:50%;right: 0; border: 1px; background-color: black; border-radius: 20px ; z-index: 1;"
+  (click)="dotButton()"></button>
+  <button *ngIf="dotButtonToggle" (click)="dotButtonOptions('profile')" style="height: 40px; width:60px; position: fixed; top:40%; right: 10px; background-color: lightseagreen; z-index: 1;">Profile</button>
+  <button *ngIf="dotButtonToggle" (click)="dotButtonOptions('chat')" style="height: 40px; width:60px; position: fixed; top:45%; right: 50px; background-color: lightseagreen; z-index: 1;">Chat</button>
+  <button *ngIf="dotButtonToggle" (click)="dotButtonOptions('home')" style="height: 40px; width:60px; position: fixed; top:50%; right: 70px; background-color: lightseagreen; z-index: 1;">Home</button>
+  <button *ngIf="dotButtonToggle" (click)="dotButtonOptions('shorts')" style="height: 40px; width:60px; position: fixed; top:55%; right: 50px; background-color: lightseagreen; z-index: 1;">Shorts</button>
+  <button *ngIf="dotButtonToggle" (click)="dotButtonOptions('find')" style="height: 40px; width:60px; position: fixed; top:60%; right: 10px; background-color: lightseagreen; z-index: 1;">Find</button>
+
   <ion-card *ngFor="let user of users">
     <ion-card-header color="warning">
       <ion-card-title>{{user.name}}</ion-card-title>

@@ -32,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: 'home-pagedf',
-    loadChildren: () => import('./home-pagedf/home-pagedf.module').then( m => m.HomePagedfPageModule)
+    loadChildren: () => import('./shorts-page/shorts-pagedf.module').then( m => m.ShortsPagedfPageModule)
   },
   {
     path: 'chat-page',

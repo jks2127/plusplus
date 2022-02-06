@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home-pagedf',
-  templateUrl: './home-pagedf.page.html',
-  styleUrls: ['./home-pagedf.page.scss'],
+  templateUrl: './shorts-pagedf.page.html',
+  styleUrls: ['./shorts-pagedf.page.scss'],
 })
-export class HomePagedfPage implements OnInit {
+export class ShortsPagedfPage implements OnInit {
 
   constructor() { }
 
