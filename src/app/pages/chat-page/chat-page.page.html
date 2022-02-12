@@ -10,9 +10,12 @@
   <div class="chatMessage">
     sdsdfsdk
     <div *ngFor="let m of msg; let i = index" class="message-line-outer-span" >
-      <span class="message-line">
-        {{msg[i]}}<br>
-      </span>
+      <div *ngIf="whoseMessage(msg[i].sender)" class="sent-message-line">
+        {{msg[i].message}}
+      </div>
+      <div *ngIf="!whoseMessage(msg[i].sender)" class="received-message-line">
+        {{msg[i].message}}
+      </div><br>
     </div>
   </div>
 </ion-content>

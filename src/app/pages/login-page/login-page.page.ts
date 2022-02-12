@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MenuController } from '@ionic/angular';
-import { LoginService } from '../services/auth/login.service';
+import { LoginService } from '../../services/auth/login.service';
 
 @Component({
   selector: 'app-login-page',

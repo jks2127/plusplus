@@ -176,8 +176,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "app:build:production",
-            "firebaseProject": "test-1e5c4",
-            "firebaseHostingSite": "test-1e5c4"
+            "firebaseProject": "test-app-2-5512d",
+            "firebaseHostingSite": "test-app-2-5512d"
           }
         }
       }

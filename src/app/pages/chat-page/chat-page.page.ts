@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
 import { IonContent, MenuController } from '@ionic/angular';
-import { ChatService } from '../chat.service';
+import { ChatService } from '../../services/chat/chat.service';
 @Component({
   selector: 'app-chat-page',
   templateUrl: './chat-page.page.html',
@@ -14,7 +14,6 @@ export class ChatPagePage implements OnInit {
   msgForm = new FormGroup({
     msgInput : new FormControl(''),
   });
-  messages: any;
   msg: Array<any>=[];
 
   constructor(private router: Router, private menuCtrl: MenuController, private chatService: ChatService,
@@ -23,12 +22,13 @@ export class ChatPagePage implements OnInit {
   ngOnInit() {
     this.msg=[];
     this.chatService.getData().subscribe((res) => {
-      // eslint-disable-next-line @typescript-eslint/no-shadow
-      res.forEach((res) => {
-        // console.log(res.message);
-        this.msg.push(res.message);
+      res.forEach((item) => {
+        let exists = this.msg.find((element)=> element.mId === item.mId)
+        if(!exists){
+          this.msg.push(item);
+        }
       });
-      this.content.scrollToBottom(1000).then(() => {console.log('scrolled to bottom');});
+      this.content.scrollToBottom(1000).then(() => {console.log('scrolled to bottom');}).catch((err: any)=>{});
     });
   }
   goToChatPage() {
@@ -43,10 +43,13 @@ export class ChatPagePage implements OnInit {
     const date = new Date();
     const dateTransformed = this.datepipe.transform(date, 'yyyy-MM-dd');
     console.log(dateTransformed);
-    this.chatService.setData(this.msgForm.get('msgInput').value, 21, dateTransformed);
+    this.chatService.setData(this.msgForm.get('msgInput').value, 21, date);
     this.msgForm.reset();
     // this.content.scrollToBottom(100);
-    this.content.scrollToBottom(1000).then(() => {console.log('scrolled to bottom');});
+    // this.content.scrollToBottom(1000).then(() => {console.log('scrolled to bottom');});
 
+  }
+  whoseMessage(sender: number) {
+    return sender === 21;
   }
 }

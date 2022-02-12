@@ -7,7 +7,7 @@ const redirectLoggedInToHome = () => redirectLoggedInTo(['/home-page']);
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./login-page/login-page.module').then(m => m.LoginPagePageModule)
+    loadChildren: () => import('./pages/login-page/login-page.module').then(m => m.LoginPagePageModule)
   },
   {
     path: 'home',
@@ -20,23 +20,23 @@ const routes: Routes = [
   },
   {
     path: 'profile-page',
-    loadChildren: () => import('./profile-page/profile-page.module').then( m => m.ProfilePagePageModule)
+    loadChildren: () => import('./pages/profile-page/profile-page.module').then( m => m.ProfilePagePageModule)
   },
   {
     path: 'login-pagex',
-    loadChildren: () => import('./login-page/login-page.module').then( m => m.LoginPagePageModule)
+    loadChildren: () => import('./pages/login-page/login-page.module').then( m => m.LoginPagePageModule)
   },
   {
     path: 'home-page',
-    loadChildren: () => import('./home-page/home-page.module').then( m => m.HomePagePageModule)
+    loadChildren: () => import('./pages/home-page/home-page.module').then( m => m.HomePagePageModule)
   },
   {
     path: 'home-pagedf',
-    loadChildren: () => import('./shorts-page/shorts-pagedf.module').then( m => m.ShortsPagedfPageModule)
+    loadChildren: () => import('./pages/shorts-page/shorts-pagedf.module').then( m => m.ShortsPagedfPageModule)
   },
   {
     path: 'chat-page',
-    loadChildren: () => import('./chat-page/chat-page.module').then( m => m.ChatPagePageModule)
+    loadChildren: () => import('./pages/chat-page/chat-page.module').then( m => m.ChatPagePageModule)
   }
 ];
 
