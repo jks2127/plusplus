@@ -6,9 +6,16 @@
           "test-1e5c4"
         ]
       }
+    },
+    "test-app-2-5512d": {
+      "hosting": {
+        "app": [
+          "test-app-2-5512d"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "test-1e5c4"
+    "default": "test-app-2-5512d"
   }
 }

@@ -17,7 +17,7 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-import { ChatService } from './chat.service';
+import { ChatService } from './services/chat/chat.service';
 
 @NgModule({
   declarations: [AppComponent],
