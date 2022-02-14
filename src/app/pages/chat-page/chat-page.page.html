@@ -8,7 +8,6 @@
 
 <ion-content #content [scrollEvents]="true">
   <div class="chatMessage">
-    sdsdfsdk
     <div *ngFor="let m of msg; let i = index" class="message-line-outer-span" >
       <div *ngIf="whoseMessage(msg[i].sender)" class="sent-message-line">
         {{msg[i].message}}
@@ -20,14 +19,14 @@
   </div>
 </ion-content>
 
-<ion-footer style="margin-bottom: 10px; margin-top: 10px;">
+<ion-footer style="width: 100%; margin-bottom: 10px; margin-top: 10px;">
   <form [formGroup]='msgForm'>
     <table>
-      <tr>
-        <td>
+      <tr style="width: 100%;">
+        <td style="width: 90%;">
           <ion-input class="inputChat" formControlName="msgInput"></ion-input>
         </td>
-        <td>
+        <td style="width: 10%; padding-right: 10px;">
           <ion-fab-button (click)="onSend()">
             <ion-icon name="send"></ion-icon>
           </ion-fab-button>
