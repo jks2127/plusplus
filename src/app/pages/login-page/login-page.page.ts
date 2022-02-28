@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/member-ordering */
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { LoginService } from '../../services/auth/login.service';
 
@@ -10,16 +10,29 @@ import { LoginService } from '../../services/auth/login.service';
   styleUrls: ['./login-page.page.scss'],
 })
 export class LoginPagePage implements OnInit {
-  constructor(private loginservice: LoginService, private menuCtrl: MenuController) { }
+  constructor(private loginservice: LoginService, private menuCtrl: MenuController, private router: Router,) { }
   loginForm= new FormGroup({
-    username: new FormControl('jks', Validators.required),
-    password: new FormControl('123', Validators.required)
+    email: new FormControl('jks2127@gmail.com', Validators.required),
+    password: new FormControl('jitu@123', Validators.required)
   });
   ngOnInit() {
     this.menuCtrl.enable(false);
   }
-  onClick() {
-    this.loginservice.check(this.loginForm.value);
+
+  signUp() {
+    this.loginservice.register(this.loginForm.value).then((user: any)=>{
+      if(user) {
+        this.router.navigateByUrl('/home-page', {replaceUrl: true})
+      }
+    });
+  }
+
+  logIn() {
+    this.loginservice.login(this.loginForm.value).then((user: any)=>{
+      if(user) {
+        this.router.navigateByUrl('/home-page', {replaceUrl: true})
+      }
+    });
   }
 
 }

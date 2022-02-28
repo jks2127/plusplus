@@ -1,8 +1,9 @@
 <ion-content>
   <form [formGroup]="loginForm">
-    <ion-input formControlName="username" placeholder="Username"></ion-input>
+    <ion-input formControlName="email" placeholder="Username"></ion-input>
     <ion-input formControlName="password" placeholder="Password"></ion-input>
-    <ion-button (click)="onClick()">Submit</ion-button>
-  </form>
+    <ion-button (click)="logIn()">Login</ion-button>
+    <ion-button (click)="signUp()">Sign Up</ion-button>
+ </form>  
 </ion-content>
 

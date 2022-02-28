@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
-
+import { LoginService } from "../../services/auth/login.service";
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.page.html',
@@ -16,7 +16,7 @@ export class HomePagePage implements OnInit {
     {name: 'kishor singh'},
   ];
   dotButtonToggle: boolean = false;
-  constructor(private router: Router, private menuCtrl: MenuController) {
+  constructor(private router: Router, private menuCtrl: MenuController, private loginService: LoginService) {
     console.log(this.users[0]);;
   }
   ngOnInit() {
@@ -29,7 +29,7 @@ export class HomePagePage implements OnInit {
   }
   logOut() {
     this.menuCtrl.enable(false);
-    this.router.navigate(['/']);
+    this.loginService.logout();
   }
   dotButton() {
     this.dotButtonToggle = !this.dotButtonToggle;
