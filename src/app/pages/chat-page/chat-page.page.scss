@@ -1,9 +1,19 @@
-.inputChat {
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.input-chat {
   border: 2px solid rgb(185, 185, 185);
   border-radius: 30px;
   height: 46px;
-  width: 95%;
-  margin-left: 10px;
+  flex-grow: 1;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+.send-button {
+  flex-basis: 60px;
+  width: 30px;
 }
 .chatMessage {
   height: 90%;
@@ -22,8 +32,8 @@ ion-fab-button {
   color: white;
   font-size: large;
   margin-top: 5px;
-  margin-right: 15px;
-  margin-left: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
 
 }
 .received-message-line {
@@ -38,7 +48,6 @@ ion-fab-button {
 .sent-message-line {
   display: block;
   margin-left: auto;
-  margin-right: 15px;
   height: fit-content;
   width: fit-content;
   max-width: 80%;
