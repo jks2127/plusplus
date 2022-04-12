@@ -22,6 +22,8 @@ export class ChatPagePage implements OnInit {
   ngOnInit() {
     this.msg=[];
     this.chatService.getData().subscribe((res) => {
+      console.log(res);
+      
       res.forEach((item) => {
         let exists = this.msg.find((element)=> element.mId === item.mId)
         if(!exists){
@@ -43,13 +45,13 @@ export class ChatPagePage implements OnInit {
     const date = new Date();
     const dateTransformed = this.datepipe.transform(date, 'yyyy-MM-dd');
     console.log(dateTransformed);
-    this.chatService.setData(this.msgForm.get('msgInput').value, 21, date);
+    this.chatService.setData(this.msgForm.get('msgInput').value, localStorage.getItem("userId"), date);
     this.msgForm.reset();
     // this.content.scrollToBottom(100);
     // this.content.scrollToBottom(1000).then(() => {console.log('scrolled to bottom');});
 
   }
-  whoseMessage(sender: number) {
-    return sender === 21;
+  whoseMessage(sender: string) {
+    return sender === localStorage.getItem("userId");
   }
 }

@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { ChatPagePageRoutingModule } from './chat-page-routing.module';
 import { ChatPagePage } from './chat-page.page';
 import { DatePipe } from '@angular/common';
-
+import { PreChatPageComponent } from "./pre-chat-page/pre-chat-page.component";
 @NgModule({
   imports: [
     CommonModule,
@@ -13,6 +13,7 @@ import { DatePipe } from '@angular/common';
     IonicModule,
     ChatPagePageRoutingModule,
     ReactiveFormsModule,
+    
   ],
   declarations: [ChatPagePage],
   providers: [DatePipe]

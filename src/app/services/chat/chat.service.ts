@@ -5,6 +5,7 @@ import { Firestore, collectionData } from '@angular/fire/firestore';
 import { addDoc, collection, deleteDoc, doc, Timestamp} from '@firebase/firestore';
 import { IonContent } from '@ionic/angular';
 import { Observable } from 'rxjs';
+import { globalVariables } from "../../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
@@ -15,12 +16,19 @@ export class ChatService {
   ref: any;
   constructor(private firestore: Firestore) {}
   getData(): Observable<message[]>{
-    this.ref = collection(this.firestore, 'Notes');
+    this.ref = collection(this.firestore, 'Notes');    
     return collectionData(this.ref, {idField: "mId"});
   }
-  setData(message: string, sender: number, date: any) {
+  setData(message: string, sender: string, date: any) {
+    let receiver = '';
+    if (localStorage.getItem('userId') == globalVariables.userIdSender) {
+      receiver = globalVariables.userIdReceiver;
+    } else {
+      receiver = globalVariables.userIdSender;
+    }
+    
     this.ref = collection(this.firestore, 'Notes');
-    addDoc(this.ref, {message, sender, date}).then(() => {
+    addDoc(this.ref, {message, sender, date, receiver}).then(() => {
     console.log('msg sent');
     this.content.scrollToBottom(1000);
     }).catch((err: any)=>{});
